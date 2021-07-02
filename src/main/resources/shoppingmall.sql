@@ -205,13 +205,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- 테이블 데이터 shoppingmall.user:~7 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT IGNORE INTO `user` (`user_id`, `user_password`, `user_name`, `user_address`, `user_phone`, `user_email`, `user_point`, `user_datetime`, `user_isAccountNonExpired`, `user_isAccountNonLocked`, `user_isCredentialNonExpired`, `user_isEnabled`) VALUES
-	('jy0935', '$2a$10$w.e6J3Syz9ImcY5VxbTvI.s4Izi8z/nY6s5Yr.fAUPZSbPO/D.0AS', '주문자1', '대구시 동구', '010-2345-5416', 'abc@naver.com', 1000, NULL, 1, 1, 1, 1),
-	('jy1111', '$2a$10$4hSgMSKIQyFJ2LHLtgJmyucFIZt28uN6a1PZsVpbG5uy2tQZZrWri', '주문자3', '대구시 동구', '010-8888-8888', 'wfwe@naver.com', NULL, NULL, 1, 1, 1, 1),
-	('jy1234', '$2a$10$W5rNJC0jHCHosERzmB0SduVya53mOu8OFHUV69geo3exixisqjq0a', '주문자2', '대구시 중구', '010-1231-4845', 'wefw11@naver.com', NULL, NULL, 1, 1, 1, 1),
-	('jy12345', '4234', '이모씨', '대구시 수성구', '010-1111-1234', 'fruit@naver.com', 1000, NULL, 1, 1, 1, 1),
-	('jy1515', '33311', '김모씨', '대구시 중구', '010-7555-1234', 'jkjk@naver.com', NULL, NULL, 1, 1, 1, 1),
-	('kkk333', '1523', '김모씨', '대구시 북구', '010-1111-1234', '123c@naver.com', 10000, NULL, 1, 1, 1, 1),
-	('yir123', '$2a$10$czmw0F/oD94BnCUmcsOYI.yxRcyWCpDipxfcWTSa//7nqPjVaHfXm', 'fwefwf', 'fwefwef', 'fwefwefw', 'fwefwef', NULL, NULL, 1, 1, 1, 1);
+	('kkk333', '1523', '김모씨', '대구시 북구', '010-1111-1234', '123c@naver.com', 10000, NULL, 1, 1, 1, 1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- 테이블 shoppingmall.userauth 구조 내보내기
@@ -223,37 +217,8 @@ CREATE TABLE IF NOT EXISTS `userauth` (
 -- 테이블 데이터 shoppingmall.userauth:~31 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `userauth` DISABLE KEYS */;
 INSERT IGNORE INTO `userauth` (`user_auth`, `user_id`) VALUES
-	('ROLE_ADMIN', 'jy0935'),
-	('ROLE_USER', 'jy1234'),
-	('ROLE_USER', 'jy9871'),
-	('ROLE_USER', 'jy35234234'),
-	('ROLE_USER', 'jy0935'),
-	('ROLE_USER', 'jy051351'),
-	('ROLE_USER', 'fewf'),
-	('ROLE_USER', 'jwkljlkwefj'),
-	('ROLE_USER', 'wef'),
-	('ROLE_USER', 'few'),
-	('ROLE_USER', 'jy09353'),
-	('ROLE_USER', 'jyrdgre'),
-	('ROLE_USER', 'test1'),
-	('ROLE_USER', 'wefewf'),
-	('ROLE_USER', 'ewfwefwefew'),
-	('ROLE_USER', 'wefwef'),
-	('ROLE_USER', 'jy0935ef'),
-	('ROLE_USER', 'jy09351'),
-	('ROLE_USER', 'reg'),
-	('ROLE_USER', 'yjergergrg'),
-	('ROLE_USER', 'erge'),
-	('ROLE_USER', 'jy0912'),
-	('ROLE_USER', 'jy05135'),
-	('ROLE_USER', 'jy1515154'),
-	('ROLE_USER', 'yj05616'),
-	('ROLE_USER', 'hk0512'),
-	('ROLE_USER', 'khg1351'),
-	('ROLE_USER', 'yir123'),
-	('ROLE_USER', 'jy151548'),
-	('ROLE_USER', 'jy1111'),
-	('ROLE_USER', 'jy1234');
+	('ROLE_ADMIN', 'kkk333'),
+	('ROLE_USER', 'kkk333');
 /*!40000 ALTER TABLE `userauth` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

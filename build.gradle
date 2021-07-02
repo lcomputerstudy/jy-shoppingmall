@@ -1,0 +1,71 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.shoppingmall.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+//gradle.startParameter.showStacktrace = org.gradle.api.logging.configuration.ShowStacktrace.ALWAYS
+
+repositories {
+	mavenCentral()
+}
+
+task myTask {
+    group = 'my group'
+    description = 'my description'
+}
+
+apply plugin: 'war'
+war {
+    baseName = 'shoppingmall'    
+}
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+dependencies {
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.security:spring-security-test'
+	compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
+	
+	// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
+	// https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core
+	compile group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0'
+	// https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl
+	compile group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.0'
+	compile group: 'commons-io', name: 'commons-io', version: '2.6'
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	
+
+}
+
+test {	
+	useJUnitPlatform()
+}
+
+bootWar {
+	archiveBaseName = "shop"
+	archiveFileName = "shop.war"
+}

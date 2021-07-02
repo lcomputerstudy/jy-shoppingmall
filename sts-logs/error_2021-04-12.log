@@ -1,0 +1,67 @@
+13:45:57.511 INFO  --- [restartedMain] c.s.example.ShoppingmallApplication : Starting ShoppingmallApplication on DESKTOP-E8TJM0T with PID 1596 (C:\Users\l8-afternoon\Documents\jy_workspace\shoppingmall\bin\main started by l8-afternoon in C:\Users\l8-afternoon\Documents\jy_workspace\shoppingmall) 
+13:45:57.515 DEBUG --- [restartedMain] c.s.example.ShoppingmallApplication : Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE 
+13:45:57.515 INFO  --- [restartedMain] c.s.example.ShoppingmallApplication : The following profiles are active: local 
+13:45:58.737 DEBUG --- [restartedMain] c.s.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+13:45:59.199 INFO  --- [restartedMain] c.s.example.ShoppingmallApplication : Started ShoppingmallApplication in 1.999 seconds (JVM running for 2.588) 
+13:46:10.471 DEBUG --- [http-nio-9000-exec-2] c.s.e.m.ProductMapper.imageRoom : ==>  Preparing: SELECT pi_unique AS image, ta.p_name AS name, ta.p_id as id FROM product_img JOIN (SELECT p_name, p_id FROM product WHERE p_category LIKE CONCAT(40, '%')) ta ON product_img.p_id = ta.p_id 
+13:46:10.487 DEBUG --- [http-nio-9000-exec-3] c.s.e.m.ProductMapper.imageLiving : ==>  Preparing: SELECT pi_unique AS image, ta.p_name AS name, ta.p_id as id FROM product_img JOIN (SELECT p_name, p_id FROM product WHERE p_category LIKE CONCAT(20, '%')) ta ON product_img.p_id = ta.p_id 
+13:46:10.490 DEBUG --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : ==>  Preparing: SELECT pi_unique AS image, ta.p_id as id, ta.order_count, tb.p_name AS name, tb.p_price as price FROM product_img LEFT JOIN (SELECT p_id, SUM(od_count) order_count FROM order_detail GROUP BY p_id) ta ON ta.p_id = product_img.p_id LEFT JOIN product tb ON tb.p_id = ta.p_id ORDER BY order_count DESC 
+13:46:10.495 DEBUG --- [http-nio-9000-exec-2] c.s.e.m.ProductMapper.imageRoom : ==> Parameters:  
+13:46:10.495 DEBUG --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : ==> Parameters:  
+13:46:10.495 DEBUG --- [http-nio-9000-exec-3] c.s.e.m.ProductMapper.imageLiving : ==> Parameters:  
+13:46:10.499 DEBUG --- [http-nio-9000-exec-1] c.s.e.m.P.imageMaterials : ==>  Preparing: SELECT pi_unique AS image, ta.p_name AS name, ta.p_id as id FROM product_img JOIN (SELECT p_name, p_id FROM product WHERE p_category LIKE CONCAT(70, '%')) ta ON product_img.p_id = ta.p_id 
+13:46:10.500 DEBUG --- [http-nio-9000-exec-1] c.s.e.m.P.imageMaterials : ==> Parameters:  
+13:46:10.523 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==    Columns: image, id, order_count, name, price 
+13:46:10.523 TRACE --- [http-nio-9000-exec-3] c.s.e.m.ProductMapper.imageLiving : <==    Columns: image, name, id 
+13:46:10.523 TRACE --- [http-nio-9000-exec-1] c.s.e.m.P.imageMaterials : <==    Columns: image, name, id 
+13:46:10.523 TRACE --- [http-nio-9000-exec-2] c.s.e.m.ProductMapper.imageRoom : <==    Columns: image, name, id 
+13:46:10.524 TRACE --- [http-nio-9000-exec-3] c.s.e.m.ProductMapper.imageLiving : <==        Row: 20210209_1658426, 거실등 1, 1 
+13:46:10.524 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210205_1622522, 4, 10, 멀티탭, 5000 
+13:46:10.524 TRACE --- [http-nio-9000-exec-2] c.s.e.m.ProductMapper.imageRoom : <==        Row: 20210208_1235562, 방등, 2 
+13:46:10.524 TRACE --- [http-nio-9000-exec-1] c.s.e.m.P.imageMaterials : <==        Row: 20210205_1622522, 멀티탭, 4 
+13:46:10.525 TRACE --- [http-nio-9000-exec-2] c.s.e.m.ProductMapper.imageRoom : <==        Row: 20210401_0826935, 방등2, 12 
+13:46:10.525 TRACE --- [http-nio-9000-exec-3] c.s.e.m.ProductMapper.imageLiving : <==        Row: 20210209_1659745, 거실등 2, 9 
+13:46:10.525 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210205_1622562, 3, 9, 형광등 스탠드, 70000 
+13:46:10.525 TRACE --- [http-nio-9000-exec-1] c.s.e.m.P.imageMaterials : <==        Row: 20210209_1545351, 2구 스위치, 6 
+13:46:10.525 TRACE --- [http-nio-9000-exec-3] c.s.e.m.ProductMapper.imageLiving : <==        Row: 20210401_0813966, 거실등 3, 10 
+13:46:10.525 TRACE --- [http-nio-9000-exec-2] c.s.e.m.ProductMapper.imageRoom : <==        Row: 20210401_083068, 방등 3, 13 
+13:46:10.526 TRACE --- [http-nio-9000-exec-3] c.s.e.m.ProductMapper.imageLiving : <==        Row: 20210401_0820674, 거실등 4, 11 
+13:46:10.526 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210209_1635562, 5, 6, 식탁등, 150000 
+13:46:10.526 TRACE --- [http-nio-9000-exec-1] c.s.e.m.P.imageMaterials : <==        Row: 20210208_1635562, 3구 스위치, 8 
+13:46:10.526 TRACE --- [http-nio-9000-exec-2] c.s.e.m.ProductMapper.imageRoom : <==        Row: 20210401_0835343, 방등 4, 14 
+13:46:10.526 DEBUG --- [http-nio-9000-exec-3] c.s.e.m.ProductMapper.imageLiving : <==      Total: 4 
+13:46:10.526 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210209_1658426, 1, 6, 거실등 1, 200000 
+13:46:10.526 TRACE --- [http-nio-9000-exec-1] c.s.e.m.P.imageMaterials : <==        Row: 20210401_084034, 전화콘센트, 15 
+13:46:10.526 DEBUG --- [http-nio-9000-exec-2] c.s.e.m.ProductMapper.imageRoom : <==      Total: 4 
+13:46:10.526 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210208_1235562, 2, 5, 방등, 70000 
+13:46:10.526 DEBUG --- [http-nio-9000-exec-1] c.s.e.m.P.imageMaterials : <==      Total: 4 
+13:46:10.527 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210209_1545351, 6, 3, 2구 스위치, 10000 
+13:46:10.527 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210209_1659745, null, null, null, null 
+13:46:10.528 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_0826935, null, null, null, null 
+13:46:10.528 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_084034, null, null, null, null 
+13:46:10.528 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210208_1635562, null, null, null, null 
+13:46:10.528 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_0820674, null, null, null, null 
+13:46:10.529 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_0835343, null, null, null, null 
+13:46:10.529 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210210_1635562, null, null, null, null 
+13:46:10.529 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_0813966, null, null, null, null 
+13:46:10.529 TRACE --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_083068, null, null, null, null 
+13:46:10.529 DEBUG --- [http-nio-9000-exec-4] c.s.e.m.ProductMapper.imageByRank : <==      Total: 15 
+13:46:10.590 DEBUG --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : ==>  Preparing: SELECT pi_unique AS image, ta.p_id as id, ta.order_count, tb.p_name AS name, tb.p_price as price FROM product_img LEFT JOIN (SELECT p_id, SUM(od_count) order_count FROM order_detail GROUP BY p_id) ta ON ta.p_id = product_img.p_id LEFT JOIN product tb ON tb.p_id = ta.p_id ORDER BY order_count DESC 
+13:46:10.590 DEBUG --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : ==> Parameters:  
+13:46:10.592 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==    Columns: image, id, order_count, name, price 
+13:46:10.593 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210205_1622522, 4, 10, 멀티탭, 5000 
+13:46:10.593 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210205_1622562, 3, 9, 형광등 스탠드, 70000 
+13:46:10.593 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210209_1658426, 1, 6, 거실등 1, 200000 
+13:46:10.593 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210209_1635562, 5, 6, 식탁등, 150000 
+13:46:10.594 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210208_1235562, 2, 5, 방등, 70000 
+13:46:10.594 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210209_1545351, 6, 3, 2구 스위치, 10000 
+13:46:10.594 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210208_1635562, null, null, null, null 
+13:46:10.594 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_0820674, null, null, null, null 
+13:46:10.594 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_0835343, null, null, null, null 
+13:46:10.594 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210210_1635562, null, null, null, null 
+13:46:10.594 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_0813966, null, null, null, null 
+13:46:10.595 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_083068, null, null, null, null 
+13:46:10.595 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210209_1659745, null, null, null, null 
+13:46:10.595 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_0826935, null, null, null, null 
+13:46:10.595 TRACE --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==        Row: 20210401_084034, null, null, null, null 
+13:46:10.595 DEBUG --- [http-nio-9000-exec-5] c.s.e.m.ProductMapper.imageByRank : <==      Total: 15 
